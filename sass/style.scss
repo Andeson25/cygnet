@@ -86,13 +86,12 @@ main {
         margin-top: 2%;
         margin-right: 2%;
         width: 23.5%;
-        height: 120px;
         overflow: hidden;
         img {
           width: 100%;
         }
       }
-      div:last-child {
+      div:nth-of-type(4n) {
         margin-right: 0;
       }
     }
