@@ -25,7 +25,6 @@ header .info {
   padding: 15px 15%;
   border-top: 1px solid #D8D8D8;
   border-bottom: 1px solid #D8D8D8;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -58,35 +57,24 @@ main {
   align-items: flex-start;
 }
 main .gallery {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  content: "";
   padding-right: 5%;
+  font-size: 0;
   width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
 }
 main .gallery h1 {
   display: none;
 }
-main .gallery > img {
+main .gallery img:nth-child(2) {
   width: 100%;
 }
-main .gallery .small-photos {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding-top: 1%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+main .gallery img:not(:nth-child(2)) {
+  margin-top: 2%;
+  margin-right: 2%;
+  width: 23.5%;
 }
-main .gallery .small-photos img {
-  display: inline;
-  width: 24%;
-  height: 24%;
+main .gallery img:last-child {
+  margin-right: 0;
 }
 main .main-text {
   color: #707070;
@@ -101,7 +89,10 @@ main .main-text h1 {
   font-size: 26px;
   line-height: 32px;
 }
-main .main-text p {
+main .main-text .mobile-text {
+  display: none;
+}
+main .main-text p, main .main-text li {
   font-size: 16px;
   line-height: 24px;
 }
@@ -171,6 +162,7 @@ footer a:hover {
   }
 
   header .logo {
+    padding: 20px;
     border-bottom: 1px solid #D8D8D8;
   }
   header .logo img {
@@ -181,7 +173,7 @@ footer a:hover {
   }
 
   main {
-    padding: 50px 5% 15%;
+    padding: 25px 5% 15%;
     flex-direction: column;
     align-items: center;
   }
@@ -192,9 +184,13 @@ footer a:hover {
   }
   main .gallery h1 {
     margin-top: 0;
+    line-height: 37px;
+    margin-bottom: 25px;
     width: 100%;
     color: #707070;
-    display: block;
+    font-weight: bold;
+    display: block !important;
+    font-size: 30px;
   }
   main .main-text {
     width: 100%;
@@ -207,6 +203,15 @@ footer a:hover {
   }
   main .main-text h2, main .main-text p {
     font-size: 18px;
+  }
+  main .main-text .desktop-text {
+    display: none;
+  }
+  main .main-text .mobile-text {
+    display: block;
+  }
+  main .main-text ul {
+    display: none;
   }
 
   body > section.info {
@@ -225,6 +230,7 @@ footer a:hover {
     align-items: center;
   }
   body > section.info .info-block img {
+    height: 30px;
     margin-right: 15px;
   }
   body > section.info .info-block h2 {
@@ -247,6 +253,7 @@ footer a:hover {
   }
   footer a {
     border-radius: 20px;
+    font-size: 28px;
     line-height: 1.1;
   }
 }
